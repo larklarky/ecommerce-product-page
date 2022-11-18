@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+ul, li {
+  list-style-type: none;
+}
+
 :root {
   --orange: hsl(26, 100%, 55%);
   --pale-orange: hsl(25, 100%, 94%);
@@ -14,7 +18,7 @@
   --grayish-blue: hsl(220, 14%, 75%);
   --light-grayish-blue: hsl(223, 64%, 98%);
   --white: hsl(0, 0%, 100%);
-  --black-lightbox: hsl(0, 0%, 0%);
+  --black-lightbox: hsl(0, 0%, 75%);
 }
 
 body {

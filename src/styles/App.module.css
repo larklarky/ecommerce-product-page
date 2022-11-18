@@ -1,38 +1,183 @@
 .App {
+  position: relative;
   text-align: center;
+  font-family: 'Kumbh Sans', sans-serif;
+  max-width: 80vw;
+  margin: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  width: 100%;
+  height: 4rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 0;
+  position: absolute;
+  top: 0;
+  border-bottom: 2px solid var(--light-grayish-blue);
+}
+
+.main, .info {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.logo {
+  font-weight: 700;
+  font-size: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.menu > ul {
+  display: flex;
+  flex-direction: row;
+  margin-left: 2rem;
+  gap: 2rem;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.menu > ul > li {
+  padding: 38px 0;
+}
+
+.menu> ul > li:hover {
+  border-bottom: 3px solid var(--orange);
+  cursor: pointer;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid palevioletred;
+  border-radius: 50%;
+  
+}
+
+.avatar:hover, .cart:hover {
+  cursor: pointer;
+}
+
+.avatar > img {
+  width: 45px;
+  height: 45px;
+  
+}
+
+.toggler, .close {
+  display: none;
+}
+
+@media only screen and (max-width: 912px) {
+  .App {
+    max-width: 100%;
+    margin: 0 1rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .main, .info {
+    gap: 1.5rem;
+  }
+
+  .menu > ul {
+    gap: 1rem;
+    margin-left: 1rem;
+  }
+
+  .logo {
+    padding-bottom: 5px;
+  }
+
+}
+
+@media only screen and (max-width: 540px) {
+  .App {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .navbar {
+    padding: 3rem 1.5rem;
+  }
+
+  .main, .info {
+    gap: 1rem;
+  }
+
+  .main {
+    position: relative;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    top: -2rem;
+    left: -2rem;
+    width: 300px;
+    height: 100vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px;
+  }
+
+  .menu.active > .close {
+    display: flex;
+    width: 100%;
+    padding: 2rem 1.8rem 1rem 2.8rem;
+  }
+
+  .menu.active > ul {
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-left: 0;
+    gap: 1rem;
+  }
+  .menu.active > ul > li{
+    padding: .5rem 0rem .5rem 3rem;
+    align-self: flex-start;
+    font-weight: 600;
+  }
+
+  .toggler {
+    display: flex;
+    align-items: center;
+    padding-top: 4px;
+  }
+
+  .avatar > img {
+    width: 35px;
+    height: 35px;
+  }
+  
+}
+
+@media only screen and (max-width: 393px) {
+  .menu.active {
+    width: 250px;
   }
 }
+
+@media only screen and (max-width: 280px) {
+  .menu.active {
+    width: 285px;
+    box-shadow: none;
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
+
+
