@@ -6,6 +6,14 @@
   margin: auto;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
 .navbar {
   display: flex;
   flex-direction: row;
@@ -14,8 +22,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 3rem 0;
-  position: absolute;
-  top: 0;
   border-bottom: 2px solid var(--light-grayish-blue);
 }
 

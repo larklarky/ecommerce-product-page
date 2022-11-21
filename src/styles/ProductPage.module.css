@@ -1,0 +1,108 @@
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 3rem 0;
+
+}
+
+.gallery {
+    width: 50%;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 40%;
+}
+
+.brand{
+    font-weight: 600;
+    font-size: .8rem;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.description {
+    text-align: left;
+    color: var(--dark-grayish-blue);
+    line-height: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.actions > button {
+    display: flex;
+    flex-direction: row;
+    gap: .8rem;
+    align-items: baseline;
+    justify-content: center;
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 230px;
+    box-shadow: 2px 19px 31px var(--pale-orange);
+}
+
+.actions > button:hover {
+    cursor: pointer;
+    background-color: hsl(26, 97%, 67%);
+}
+
+.counter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 150px;
+    background-color: var( --light-grayish-blue);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn {
+    display: flex;
+    color: var(--orange);
+    font-size: 1.3rem;
+    align-items: center;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: hsl(26, 97%, 67%);
+}
+
+
+
+
+

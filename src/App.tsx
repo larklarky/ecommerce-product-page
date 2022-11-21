@@ -3,8 +3,9 @@ import  styles from './styles/App.module.css';
 import {BsCart3} from 'react-icons/bs';
 import {GiHamburgerMenu} from 'react-icons/gi';
 import {IoMdClose} from 'react-icons/io';
+import {ProductPage} from './ProductPage';
 
-type Sneaker = {
+export type Sneaker = {
   id: number;
   brand: string;
   title: string;
@@ -13,7 +14,7 @@ type Sneaker = {
   discount: number | null;
 }
 
-interface AppContextInterface {
+export interface AppContextInterface {
   currency: string;
   sneakers: Sneaker[];
 }
@@ -91,6 +92,9 @@ function App() {
               <img src='/image-avatar.png' alt='user-avatar'></img>
             </div>
           </div>
+        </div>
+        <div className={styles.container}>
+          <ProductPage sneakers={state.sneakers[0]} currency={state.currency}/>
         </div>
       </div>
     </AppContext.Provider>
