@@ -5,6 +5,12 @@ import {GiHamburgerMenu} from 'react-icons/gi';
 import {IoMdClose} from 'react-icons/io';
 import {ProductPage} from './ProductPage';
 
+export type Image = {
+  id: number;
+  main: string;
+  thumbnail: string;
+}
+
 export type Sneaker = {
   id: number;
   brand: string;
@@ -12,6 +18,7 @@ export type Sneaker = {
   description: string;
   price: number;
   discount: number | null;
+  images: Image[]
 }
 
 export interface AppContextInterface {
@@ -45,6 +52,28 @@ const AppData: AppContextInterface ={
       description: 'These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer',
       price: 250,
       discount: 50,
+      images: [
+        {
+          id: 1,
+          main: 'image-product-1.jpg',
+          thumbnail: 'image-product-1-thumbnail.jpg',
+        },
+        {
+          id: 2,
+          main: 'image-product-2.jpg',
+          thumbnail: 'image-product-2-thumbnail.jpg',
+        },
+        {
+          id: 3,
+          main: 'image-product-3.jpg',
+          thumbnail: 'image-product-3-thumbnail.jpg',
+        },
+        {
+          id: 4,
+          main: 'image-product-4.jpg',
+          thumbnail: 'image-product-4-thumbnail.jpg',
+        }
+      ]
     }
   ]
 }

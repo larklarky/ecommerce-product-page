@@ -2,7 +2,8 @@ import { useState, useContext } from 'react';
 import  styles from './styles/ProductPage.module.css';
 import {Sneaker, AppContext} from './App';
 import {BsCart3} from 'react-icons/bs';
-import {HiPlusSm, HiMinusSm} from 'react-icons/hi'
+import {HiPlusSm, HiMinusSm} from 'react-icons/hi';
+import {Gallery} from './Gallery';
 
 type InfoProps = {
     sneakers: Sneaker;
@@ -17,7 +18,7 @@ export const ProductPage = ({sneakers, currency}: InfoProps) => {
     }
     return(
         <div className={styles.container}>
-            <div className={styles.gallery}></div>
+            <Gallery images={sneakers.images}/>
             <div className={styles.info}>
                 <div className={styles.brand}>{sneakers.brand}</div>
                 <div className={styles.title}>{sneakers.title}</div>
