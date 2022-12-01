@@ -13,8 +13,13 @@ export const ProductPage = ({sneakers, currency}: InfoProps) => {
     const [amount, setAmount] = useState<number>(1);
     const {state, dispatch} = useContext(AppContext);
 
+    const calcPrice = (price: number, discount: number) => {
+        return price - (price / 100 * discount);
+    }
+
+
     const Convertion = (amount: number, currency: string = 'USD') => {
-        return new Intl.NumberFormat('en-US', {style: 'currency', currency: currency, minimumFractionDigits: 0}).format(amount)
+        return new Intl.NumberFormat('en-US', {style: 'currency', currency: currency, minimumFractionDigits: 2}).format(amount)
     }
     return(
         <div className={styles.container}>
@@ -23,8 +28,13 @@ export const ProductPage = ({sneakers, currency}: InfoProps) => {
                 <div className={styles.brand}>{sneakers.brand}</div>
                 <div className={styles.title}>{sneakers.title}</div>
                 <div className={styles.description}>{sneakers.description}</div>
-                <div className={styles.price}>
-                    <span>{Convertion(sneakers.price, currency)}</span>
+                <div className={styles.priceInfo}>
+                    <div className={styles.price}>
+                        <span>{sneakers.discount ? Convertion(calcPrice(sneakers.price, sneakers.discount), currency) : Convertion(sneakers.price, currency)}</span>
+                        {sneakers.discount ? <span className={styles.discount}>{sneakers.discount}%</span> : ''}
+                        
+                    </div>
+                    {sneakers.discount ? <div className={styles.oldPrice}>{Convertion(sneakers.price, currency)}</div> : ''}
                 </div>
                 <div className={styles.actions}>
                     <div className={styles.counter}>

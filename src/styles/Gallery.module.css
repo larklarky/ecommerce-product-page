@@ -12,11 +12,37 @@
 
 .main {
     width: 450px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main > img {
     width: 450px;
     border-radius: 15px;
+}
+
+.controls {
+    width: calc(100% - 1rem);
+    display: flex;
+    position: absolute;
+    top: calc(50% - 25px);
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 5;
+    display: none;
+}
+
+.control {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: .5px solid rgb(178, 178, 178);
 }
 
 .thumbnails {
@@ -51,5 +77,45 @@
 
 .thumbnail > .current {
     opacity: .3;
+}
+
+@media only screen and (max-width: 912px) {
+    .container {
+        width: 100vw;
+    }
+
+    .main {
+        width: 100%;
+    }
+
+    .main > img {
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .container {
+        width: 100vw;
+        margin: 0 0 2rem 0;
+
+    }
+
+    .main {
+        width: 100%;
+    }
+
+    .controls {
+        display: flex;
+    }
+
+    .main > img {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .thumbnails {
+        display: none;
+    }
 }
 

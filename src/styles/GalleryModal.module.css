@@ -111,3 +111,11 @@
     opacity: .3;
 }
 
+@media only screen and (max-width: 912px) {
+    .container {
+        display: none;
+    }
+}
+
+
+

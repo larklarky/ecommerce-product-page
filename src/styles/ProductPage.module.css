@@ -43,9 +43,34 @@
     margin-bottom: 2rem;
 }
 
-.price {
+.priceInfo {
+    display: flex;
+    flex-direction: column;
     font-size: 1.8rem;
     font-weight: 700;
+    gap: .5rem;
+}
+
+.price {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.discount {
+    color: var(--orange);
+    background-color: var(--pale-orange);
+    padding: 3px 6px;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.oldPrice {
+    font-size: 1rem;
+    color: var(--grayish-blue);
+    text-decoration: line-through;
+    text-align: start;
 }
 
 .actions {
@@ -100,6 +125,77 @@
 .btn:hover {
     cursor: pointer;
     color: hsl(26, 97%, 67%);
+}
+
+@media only screen and (max-width: 912px) {
+    .container {
+        flex-direction: column;
+        padding: 0 0 5rem 0;
+        gap: 1rem;
+    }
+
+    .info {
+        width: 100%;
+        padding: 0 2rem 0 2rem;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .container {
+        flex-direction: column;
+        padding: 0 0 5rem 0;
+        gap: 1rem;
+    }
+
+    .info {
+        width: 100%;
+        padding: 0 2rem 0 2rem;
+    }
+
+    .brand {
+        font-size: 1rem;
+    }
+
+    .priceInfo {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: center;
+        justify-content: centerS;
+        width: 100%;
+        padding: 0;
+    }
+
+    .counter {
+        width: 100%;
+        padding: 20px 30px;
+        border-radius: 10px;
+        font-size: 1.3rem;
+    }
+
+    .btn {
+        font-size: 2rem;
+    }
+
+    .btn > svg {
+        stroke-width: 1.1;
+    }
+
+    .actions > button {
+        width: 100%;
+        padding: 20px 30px;
+        font-size: 1.2rem;
+    }
+
+    .actions > button > svg {
+        stroke-width: .5;
+
+    }
 }
 
 
