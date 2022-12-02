@@ -54,15 +54,6 @@
   cursor: pointer;
 }
 
-.cart {
-  display: flex;
-  align-items: center;
-}
-
-.cart > svg {
-  stroke-width: .4;
-}
-
 .avatar {
   display: flex;
   align-items: center;

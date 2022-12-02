@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: .4rem;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.thumbnail > img {
+    width: 40px;
+    border-radius: 5px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.header {
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price > span:last-child {
+    font-weight: 600;
+}
+
+.delete {
+    color: var(--grayish-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete:hover {
+    cursor: pointer;
+    color: var(--dark-grayish-blue);
+}
+
+

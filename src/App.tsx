@@ -4,12 +4,14 @@ import {BsCart3} from 'react-icons/bs';
 import {GiHamburgerMenu} from 'react-icons/gi';
 import {IoMdClose} from 'react-icons/io';
 import {ProductPage} from './ProductPage';
+import {Cart} from './Cart';
 
 export type Image = {
   id: number;
   main: string;
   thumbnail: string;
 }
+
 
 export type Sneaker = {
   id: number;
@@ -21,9 +23,15 @@ export type Sneaker = {
   images: Image[]
 }
 
+export type Item = {
+  item: Sneaker;
+  amount: number;
+}
+
 export interface AppContextInterface {
   currency: string;
   sneakers: Sneaker[];
+  cart: Item[];
 }
 
 type Payload = {
@@ -75,7 +83,8 @@ const AppData: AppContextInterface ={
         }
       ]
     }
-  ]
+  ],
+  cart: []
 }
 
 export const AppContext = createContext<ContextValue>({state: AppData, dispatch: (action: Action) => {}});
@@ -116,7 +125,7 @@ function App() {
             </div>
           </div>
           <div className={styles.info}>
-            <div className={styles.cart}><BsCart3 size='25px'/></div>
+            <Cart cart={state.cart}/>
             <div className={styles.avatar}>
               <img src='/image-avatar.png' alt='user-avatar'></img>
             </div>
