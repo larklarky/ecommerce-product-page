@@ -1,6 +1,5 @@
-import React, { createContext, useReducer, useState } from 'react';
+import { createContext, useReducer, useState } from 'react';
 import  styles from './styles/App.module.css';
-import {BsCart3} from 'react-icons/bs';
 import {GiHamburgerMenu} from 'react-icons/gi';
 import {IoMdClose} from 'react-icons/io';
 import {ProductPage} from './ProductPage';
@@ -93,17 +92,27 @@ const initialState = AppData;
 
 function reducer(state: AppContextInterface, action: Action) {
   switch (action.type) {
+    case 'add':
+      return Object.assign({}, state, {
+        cart: [...state.cart, action.payload]
+      })
+    case 'delete':
+      return Object.assign({}, state, {
+        cart: state.cart.filter((item) => {
+          return item.item.id !== action.payload.itemId
+        })
+      })
     default:
       return state
   }
 }
 
 
+
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [menuActive, setMenuActive] = useState<boolean>(false);
 
-  console.log('menuActive', menuActive)
   return (
     <AppContext.Provider value={{state, dispatch}}>
       <div className={styles.App}>

@@ -1,6 +1,7 @@
+import { useContext } from 'react';
 import styles from './styles/CartItem.module.css';
 import {FaTrashAlt} from 'react-icons/fa';
-import { Item } from './App';
+import { Item, AppContext} from './App';
 
 type CartProps = {
     item: Item;
@@ -20,8 +21,14 @@ const CalcPrice = (price: number, discount: number | null) => {
 }
 
 export const CartItem = ({item}: CartProps) => {
+    const {state, dispatch} = useContext(AppContext);
+
+    const handleDelete = (itemId: number) => {
+        dispatch({type: 'delete', payload: {itemId: itemId}})
+    }
+
     return(
-        <div className={styles.container}>
+        <div key={item.item.id} className={styles.container}>
             <div className={styles.thumbnail}>
                 <img src={item.item.images[0].thumbnail} alt='item-image'></img>
             </div>
@@ -33,7 +40,7 @@ export const CartItem = ({item}: CartProps) => {
 
                 </div>
             </div>
-            <div className={styles.delete}><FaTrashAlt/></div>
+            <div className={styles.delete} onClick={() => handleDelete(item.item.id)}><FaTrashAlt/></div>
         </div>
     )
 }

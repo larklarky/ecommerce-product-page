@@ -17,6 +17,10 @@ export const ProductPage = ({sneakers, currency}: InfoProps) => {
         return price - (price / 100 * discount);
     }
 
+    const handleAddToCart = (sneakers: Sneaker, amount: number) => {
+        dispatch({type: 'add', payload: {item: sneakers, amount: amount}})
+    }
+
 
     const Convertion = (amount: number, currency: string = 'USD') => {
         return new Intl.NumberFormat('en-US', {style: 'currency', currency: currency, minimumFractionDigits: 2}).format(amount)
@@ -54,7 +58,7 @@ export const ProductPage = ({sneakers, currency}: InfoProps) => {
                             <HiPlusSm/>
                         </div>
                     </div>
-                    <button>
+                    <button onClick={() => handleAddToCart(sneakers, amount)}>
                         <BsCart3/>
                         <span>Add to cart</span>
                     </button>
