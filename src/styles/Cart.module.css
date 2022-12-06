@@ -34,7 +34,7 @@ stroke-width: .2;
     flex-direction: column;
     position: absolute;
     top: 50px;
-    left: -150px;
+    left: calc(100% - (300px - 5rem));
     width: 300px;
     background-color: white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -44,6 +44,7 @@ stroke-width: .2;
 
 .container.active {
     display: flex;
+    z-index: 10;
 }
 
 .header {
@@ -79,4 +80,13 @@ stroke-width: .2;
 
 .actions > button:hover {
     cursor: pointer;
+}
+
+@media only screen and (max-width: 540px) { 
+    .container.active {
+        width: calc(100vw - 2rem);
+        margin: auto;
+        left: calc(100% - calc(100vw - 2rem) + 4rem);
+        top: 5rem;
+    }
 }
