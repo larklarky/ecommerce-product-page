@@ -136,7 +136,7 @@ function App() {
           <div className={styles.info}>
             <Cart cart={state.cart}/>
             <div className={styles.avatar}>
-              <img src='/image-avatar.png' alt='user-avatar'></img>
+              <img src='image-avatar.png' alt='user-avatar'></img>
             </div>
           </div>
         </div>
